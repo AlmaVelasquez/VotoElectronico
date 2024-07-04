@@ -20,8 +20,7 @@ function submitVote() {
         // Marcar que el usuario ha votado
         localStorage.setItem('hasVoted', 'true');
 
-        // Deshabilitar los controles de votación después del voto
-        disableVoting();
+        
     } else {
         alert('Por favor, selecciona un candidato antes de votar.');
     }
