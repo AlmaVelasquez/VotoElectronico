@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // Verificar si el usuario ya ha votado
     if (localStorage.getItem('hasVoted') === 'true') {
-        // Si ya ha votado, ocultar el formulario de votación
-        document.getElementById('voteForm').style.display = 'none';
         // Mostrar un mensaje de que ya ha votado
         alert('Ya has votado. Gracias por tu participación.');
+        // Deshabilitar los botones de votación
+        disableVotingButtons();
     }
 });
 
@@ -25,13 +25,21 @@ function submitVote() {
         // Marcar que el usuario ha votado
         localStorage.setItem('hasVoted', 'true');
 
-        // Ocultar el formulario de votación después del voto
-        form.style.display = 'none';
-
-        // Alternativamente, podrías deshabilitar individualmente los botones aquí si prefieres
-        // Pero en este caso, estamos ocultando todo el formulario después del voto
+        // Deshabilitar los botones de votación después del voto
+        disableVotingButtons();
     } else {
         alert('Por favor, selecciona un candidato antes de votar.');
     }
 }
 
+function disableVotingButtons() {
+    // Obtener todos los radio buttons dentro del formulario de votación
+    const radioButtons = document.querySelectorAll('#voteForm input[type="radio"]');
+    // Deshabilitar cada radio button
+    radioButtons.forEach(radio => {
+        radio.disabled = true;
+    });
+
+    // Deshabilitar el botón de votar
+    document.querySelector('#voteForm button').disabled = true;
+}
