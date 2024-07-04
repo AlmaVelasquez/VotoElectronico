@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votación Escolar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .candidate {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Secondary School Gym</h2>
+        <h1>Votación Escolar</h1>
+        <form id="voteForm">
+            <div class="candidate">
+                <input type="radio" id="candidate1" name="candidate" value="Candidato 1">
+                <label for="candidate1">Candidato 1</label>
+            </div>
+            <div class="candidate">
+                <input type="radio" id="candidate2" name="candidate" value="Candidato 2">
+                <label for="candidate2">Candidato 2</label>
+            </div>
+            <div class="candidate">
+                <input type="radio" id="candidate3" name="candidate" value="Candidato 3">
+                <label for="candidate3">Candidato 3</label>
+            </div>
+            <button type="button" onclick="submitVote()">Votar</button>
+        </form>
+    </div>
+
+    <script>
+        function submitVote() {
+            const form = document.getElementById('voteForm');
+            const selectedCandidate = form.candidate.value;
+            if (selectedCandidate) {
+                alert(`Has votado por: ${selectedCandidate}`);
+                // Aquí puedes agregar la lógica para enviar el voto a un servidor
+            } else {
+                alert('Por favor, selecciona un candidato antes de votar.');
+            }
+        }
+    </script>
+</body>
+</html>
