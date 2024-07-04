@@ -24,7 +24,7 @@ function submitVote() {
         localStorage.setItem('hasVoted', 'true');
 
         // Ocultar el formulario de votación después del voto
-        form.style.display = 'none';
+      
 
         // Alternativamente, podrías deshabilitar individualmente los botones aquí si prefieres
         // Pero en este caso, estamos ocultando todo el formulario después del voto
