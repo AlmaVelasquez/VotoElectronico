@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // Verificar si el usuario ya ha votado
-    if (localStorage.getItem('hasVoted') === 'true') {
-        disableVoting(); // Si ya ha votado, deshabilitar los controles de votación
-    }
+   
 });
 
 function submitVote() {
